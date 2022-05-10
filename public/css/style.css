@@ -1,0 +1,706 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8em;
+  width: auto;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.menu__title__h1 {
+  font-family: "Shrikhand", serif;
+  font-size: 1.5rem;
+}
+
+.menu__listing__h2 {
+  text-transform: uppercase;
+}
+
+.menu__listing__plat h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.footer__logo {
+  font-family: "Shrikhand";
+  font-size: 1.5rem;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  padding: 18px;
+  box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.35);
+}
+.header__arrow {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 25px;
+  top: 28px;
+  font-size: 1.5em;
+}
+.header .displaynone {
+  display: none;
+}
+
+.footer {
+  background: #353535;
+  color: white;
+  padding: 25px;
+}
+.footer__logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+.footer ul li {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  transition: all 0.2s;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+.footer ul li:hover {
+  font-weight: bold;
+}
+.footer ul img {
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
+}
+
+@media screen and (min-width: 800px) {
+  .footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__logo {
+    width: 150px;
+    height: 100%;
+  }
+
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .footer ul li {
+    margin: 0 20px;
+  }
+}
+.button__standard {
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 1rem 0;
+  border-radius: 100px;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  width: 185px;
+  transition: all 0.2s;
+}
+.button__standard:hover {
+  background: linear-gradient(#ff8de0, #9e67e0);
+}
+
+@keyframes cardapparition {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes logoSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkboxMargin {
+  0% {
+    right: -60px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes priceSlide {
+  0% {
+    right: 15px;
+  }
+  100% {
+    right: 75px;
+  }
+}
+main {
+  width: 100%;
+  background-color: #f6f6f6;
+}
+
+.div_image {
+  width: 100%;
+  height: 250px;
+}
+.div_image_restaurant {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  border-radius: 30px 30px 0 0;
+  background-color: #f6f6f6;
+  padding: 35px 15px 35px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -37px;
+}
+.menu__wrapper {
+  width: 100%;
+}
+.menu__title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  position: relative;
+}
+.menu__title__h1 {
+  margin-bottom: 0;
+}
+.menu__title__heart {
+  margin-right: 15px;
+}
+.menu__title__heart__empty {
+  color: black;
+  transition: all 0.5s;
+  position: absolute;
+  top: 16px;
+}
+.menu__title__heart__full {
+  opacity: 0;
+  transition: all 0.5s;
+  font-weight: bold;
+  background: linear-gradient(184deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: absolute;
+  top: 16px;
+}
+.menu__title__heart:hover > .menu__title__heart__empty {
+  color: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 16px;
+}
+.menu__title__heart:hover > .menu__title__heart__full {
+  opacity: 1;
+  position: absolute;
+  top: 16px;
+}
+.menu__listing {
+  width: 100%;
+  margin-bottom: 35px;
+}
+.menu__listing__h2 {
+  margin-bottom: 10px;
+}
+.menu__listing__underline {
+  background-color: #99E2D0;
+  height: 3px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+.menu__listing__plat {
+  height: 36px;
+  border-radius: 10px;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  animation: cardapparition 1s ease-in-out;
+}
+.menu__listing__plat:hover > .menu__listing__plat__description {
+  animation: 1s ease-in-out forwards;
+}
+.menu__listing__plat:hover > .menu__listing__plat__checkbox {
+  animation: checkboxMargin 1s ease-in-out forwards;
+}
+.menu__listing__plat:hover .menu__listing__plat__checkbox__logo {
+  animation: logoSpin 1s ease-in-out forwards;
+}
+.menu__listing__plat:hover .menu__listing__plat__price {
+  animation: priceSlide 1s ease-in-out forwards;
+}
+.menu__listing__plat__description {
+  position: relative;
+  width: 80%;
+}
+.menu__listing__plat__description p, .menu__listing__plat__description h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 1px;
+  margin-top: 0;
+}
+.menu__listing__plat__price {
+  padding-left: 8px;
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+}
+.menu__listing__plat__checkbox {
+  width: 60px;
+  height: 100%;
+  margin-top: -12px;
+  background: #99E2D0;
+  z-index: 1;
+  position: absolute;
+  right: -60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__listing__plat__checkbox__logo {
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-size: 1.5em;
+}
+.menu__listing .delay1 {
+  animation-delay: 0.2s;
+}
+.menu__listing .delay2 {
+  animation-delay: 0.4s;
+}
+.menu__listing .delay3 {
+  animation-delay: 0.6s;
+}
+
+@media screen and (min-width: 1000px) {
+  .menu__wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+  .menu__listing {
+    margin: 0 20px;
+  }
+  .menu__title {
+    padding-left: 20px;
+  }
+}
+.button__standard .commander {
+  align-items: center;
+  transition: all 0.2s;
+}
+
+@keyframes cardapparition {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes logoSpin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkboxMargin {
+  from {
+    right: -60px;
+  }
+  to {
+    right: 0px;
+  }
+}
+@keyframes priceSlide {
+  from {
+    right: 15px;
+  }
+  to {
+    right: 75px;
+  }
+}
+.loader_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(0deg, 0%, 100%, 0.9);
+  opacity: 1;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loaderDisapear 1s ease both;
+  animation-delay: 2.2s;
+}
+.loader_wrapper .loader {
+  display: flex;
+  flex-direction: row;
+}
+.loader_wrapper .loader .ball {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
+  border-radius: 50%;
+  animation: bounce 0.6s alternate forwards;
+  animation-iteration-count: 3;
+}
+.loader_wrapper .loader .ball:nth-child(1) {
+  background-color: #99E2D0;
+}
+.loader_wrapper .loader .ball:nth-child(2) {
+  animation-delay: 0.2s;
+  background-color: #FF79DA;
+}
+.loader_wrapper .loader .ball:nth-child(3) {
+  animation-delay: 0.4s;
+  background-color: #9356DC;
+}
+
+@keyframes bounce {
+  to {
+    transform: translate3d(0, -30px, 0);
+  }
+}
+@keyframes loaderDisapear {
+  to {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+.city {
+  background-color: #eaeaea;
+  padding: 15px;
+}
+.city__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.city__wrapper img {
+  width: 16px;
+  height: 16px;
+}
+.city h3 {
+  margin-left: 12px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.explore {
+  background-color: #f6f6f6;
+  padding: 50px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.explore h1 {
+  text-align: center;
+  font-size: 1.7em;
+  margin-bottom: 0.8em;
+}
+.explore p {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 1.3em;
+}
+.explore button:hover {
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.4);
+}
+
+.functionning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 40px 20px;
+}
+.functionning__step {
+  background: #f6f6f6;
+  padding: 20px;
+  margin-bottom: 2em;
+  margin-left: 10px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.functionning__step:hover {
+  background: #f2eafb;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.4);
+}
+.functionning__step svg {
+  height: 20px;
+  width: 20px;
+  margin-left: 1em;
+}
+.functionning__step:hover svg path {
+  fill: #9356DC;
+}
+.functionning__step p {
+  margin-left: 1em;
+  font-weight: bold;
+}
+.functionning__step__circle {
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: -10px;
+  text-align: center;
+  background: #9356DC;
+  color: white;
+  border-radius: 50px;
+  padding: 5px;
+}
+.functionning__step span {
+  position: absolute;
+  left: 4px;
+  text-align: center;
+  background: #9356DC;
+  color: white;
+}
+
+@media screen and (min-width: 800px) {
+  .functionning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .functionning_wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .functionning__step {
+    margin-left: 50px;
+  }
+
+  .functionning h1 {
+    justify-items: center;
+    margin-bottom: 40px;
+  }
+}
+.restaurants {
+  background: #f6f6f6;
+  padding: 40px 20px;
+}
+.restaurants__card {
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.restaurants__card:hover {
+  transform: scale(1.01);
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.4);
+}
+.restaurants__card span {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #99E2D0;
+  color: #32b091;
+  border-radius: 3px;
+  padding: 7px;
+  font-weight: bold;
+}
+.restaurants__card__img {
+  object-fit: cover;
+  object-position: 0% 61%;
+  width: 100%;
+  height: 175px;
+  border-radius: 10px 10px 0 0;
+}
+.restaurants__card__text {
+  background: white;
+  height: 75px;
+  border-radius: 0 0 10px 10px;
+  padding: 16px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.restaurants__card__text h2 {
+  font-weight: bold;
+}
+.restaurants__card__text p {
+  font-size: 1.1em;
+  padding-top: 5px;
+  margin-top: -7px;
+}
+.restaurants__card__text__heart {
+  position: absolute !important;
+  top: 28px;
+  right: 25px;
+}
+.restaurants__card__text__heart__empty {
+  color: black;
+  opacity: 1;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.restaurants__card__text__heart__full {
+  color: transparent;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.restaurants__card__text__heart:hover > .restaurants__card__text__heart__empty {
+  color: transparent;
+  opacity: 0;
+}
+.restaurants__card__text__heart:hover > .restaurants__card__text__heart__full {
+  opacity: 1;
+  font-weight: bold;
+  background: linear-gradient(184deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media screen and (min-width: 1000px) {
+  .restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  .restaurants h1 {
+    margin-bottom: 40px;
+  }
+
+  .restaurants_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  .restaurants__card {
+    width: 550px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants {
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+}
+/*
+@import "feuilles de styles";
+@import "base"; 
+@import "components";
+@import "layouts"; 
+@import "pages";
+*/
+/* LE FICHIER MAIN NE DOIT COMPORTER QUE DES IMPORTS */
+
+/*# sourceMappingURL=style.css.map */

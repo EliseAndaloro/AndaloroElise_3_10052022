@@ -1,0 +1,235 @@
+main{
+    width: 100%;
+    background-color: $background-color-1;
+}
+
+.div_image{
+    width: 100%;
+    height: 250px;
+    &_restaurant{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu{
+    border-radius: 30px 30px 0 0;
+    background-color: $background-color-1;
+    padding: 35px 15px 35px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    top: -37px;
+
+    &__wrapper{
+        width: 100%;
+    }
+    
+    &__title{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        position: relative;
+        &__h1{
+            margin-bottom: 0;
+        }
+        &__heart{
+            margin-right: 15px;
+            &__empty{
+                color:black;
+                transition: all .5s;
+                position: absolute;
+                top:16px;
+            }
+            &__full{
+                opacity: 0;
+                transition: all .5s;
+                font-weight : bold;
+                background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
+                -webkit-background-clip: text;
+                color: transparent;
+                position: absolute;
+                top:16px;
+            }
+            &:hover{
+                & > .menu__title__heart__empty {
+                    color: transparent;
+                    opacity: 0;
+                    position: absolute;
+                    top: 16px;
+                }
+                & > .menu__title__heart__full {
+                    opacity: 1;
+                    position: absolute;
+                    top:16px;
+                }
+            }
+        }
+    }
+
+    &__listing{
+        width: 100%;
+        margin-bottom: 35px;
+        &__h2{
+            margin-bottom: 10px;
+        }
+        &__underline{
+            background-color: $third-color;
+            height: 3px;
+            width: 40px;
+            margin-bottom: 15px;
+        }
+        &__plat{
+            height: 36px;
+            border-radius: 10px;
+            @include box-shadow;
+            margin-bottom: 15px;
+            padding: 12px;
+
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+
+            position: relative;
+
+            animation: cardapparition 1s ease-in-out;
+            
+            &:hover {
+                & > .menu__listing__plat__description {
+                    animation:  1s ease-in-out forwards;
+                }
+                & > .menu__listing__plat__checkbox {
+                    animation: checkboxMargin 1s ease-in-out forwards;
+                }
+                & .menu__listing__plat__checkbox__logo {
+                    animation: logoSpin 1s ease-in-out forwards;
+                }
+                & .menu__listing__plat__price {
+                    animation: priceSlide 1s ease-in-out forwards;
+                }
+            }
+
+            &__description{
+                position: relative;
+                width: 80%;
+                p, h3{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-bottom: 1px;
+                    margin-top: 0;
+                }
+            }
+            &__price{
+                padding-left: 8px;
+
+                position: absolute;
+                right: 15px;
+                bottom: 12px;
+
+                font-weight: bold;
+
+                display: flex;
+                align-items: flex-end;
+            }
+            &__checkbox{
+                width: 60px;
+                height: 100%;
+                margin-top: -12px;
+
+                background: $third-color;
+                z-index: 1;
+
+                position: absolute;
+                right: -60px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__logo{
+                    z-index: 2;
+                    width: 20px;
+                    height: 20px;
+                    color: white;
+                    font-size: 1.5em;
+                }
+            }
+        }
+        .delay1{
+            animation-delay: $card-delay;
+        }
+        .delay2{
+            animation-delay: $card-delay*2;
+        }
+        .delay3{
+            animation-delay: $card-delay*3;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .menu{
+        &__wrapper{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 30px;
+        }
+        &__listing{
+            margin: 0 20px;
+        }
+        &__title{
+            padding-left: 20px;
+        }
+    }
+}
+
+.button__standard .commander{
+    align-items: center;
+    transition: all 0.2s;
+}
+
+
+
+@keyframes cardapparition {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes logoSpin {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes checkboxMargin {
+    from {
+        right: -60px;
+    }
+    to{
+        right: 0px;
+    }
+}
+
+@keyframes priceSlide {
+    from {
+        right: 15px;
+    }
+    to{
+        right: 75px;
+    }
+}
